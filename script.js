@@ -35,7 +35,12 @@ function encodeMessage() {
   let shift = parseInt(document.getElementById('shift').value);
   
   // Normalize shift to be within the range of 0 to 25
-  shift = ((shift % 26) + 26) % 26;
+  if(shift % 26 == 0){
+    shift++;
+    shift = ((shift % 26) + 26) % 26;
+  }else{
+    shift = ((shift % 26) + 26) % 26;
+  }
   
   const encodedMessage = caesarCipher(message, shift);
   document.getElementById('output').innerText = encodedMessage;
@@ -48,7 +53,13 @@ function decodeMessage() {
   let shift = parseInt(document.getElementById('shift').value);
   
   // Normalize shift to be within the range of 0 to 25
-  shift = ((shift % 26) + 26) % 26;
+  if(shift % 26 == 0){
+    shift++;
+    shift = ((shift % 26) + 26) % 26;
+    
+  }else{
+    shift = ((shift % 26) + 26) % 26;
+  }
   
   // To decode, use negative shift
   const decodedMessage = caesarCipher(message, -shift);
