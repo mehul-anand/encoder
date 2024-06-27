@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message Encoder/Decoder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container" id="loginContainer">
+      <h1>Login</h1>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+      <p id="loginError" style="color: red"></p>
+    </div>
+
+    <div class="container" id="appContainer" style="display: none">
+      <h1>Message Encoder/Decoder</h1>
+      <textarea
+        id="inputMessage"
+        rows="4"
+        placeholder="Enter your message here"
+      ></textarea>
+      <input
+        type="number"
+        id="shift"
+        placeholder="Enter shift value (e.g., 3)"
+      />
+      <button onclick="encodeMessage()">Encode Message</button>
+      <button onclick="decodeMessage()">Decode Message</button>
+      <p><strong>Output:</strong></p>
+      <p id="output"></p>
+      <button onclick="copyText()">Copy Text</button>
+      <p id="copyFeedback" style="color: green"></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
