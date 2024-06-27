@@ -3,7 +3,7 @@ function login() {
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  if (username === 'dish' && password === 'mehul') {
+  if (username.toLowerCase() === 'dish' && password.toLowerCase() === 'mehul') {
     document.getElementById('loginContainer').style.display = 'none';
     document.getElementById('appContainer').style.display = 'block';
   } else {
