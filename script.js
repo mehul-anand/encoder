@@ -3,7 +3,7 @@ function login() {
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  if (username.toLowerCase() === 'dish' && password.toLowerCase() === 'mehul') {
+  if (username.toLowerCase() === 'mainframe' && password.toLowerCase() === 'iota') {
     document.getElementById('loginContainer').style.display = 'none';
     document.getElementById('appContainer').style.display = 'block';
   } else {
@@ -56,7 +56,7 @@ function decodeMessage() {
   if(shift % 26 == 0){
     shift++;
     shift = ((shift % 26) + 26) % 26;
-    
+
   }else{
     shift = ((shift % 26) + 26) % 26;
   }
