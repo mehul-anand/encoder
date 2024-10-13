@@ -6,90 +6,118 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  font-family: 'Coda', monospace; /* Cryptic font for retro code-like appearance */
+  background: radial-gradient(circle, #111111 0%, #000000 100%);
+  color: #e0e0e0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh; /* Ensure body takes up at least the full viewport height */
-  padding: 10px;
-  align-items: center; /* Center horizontally */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
+/* Container */
 .container {
-  background: #fff;
-  padding: 20px;
+  background: #1a1a1a;
+  padding: 30px; /* Increased padding for better readability */
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #333; /* Removed neon border */
   max-width: 400px;
   width: 100%;
-  margin: auto; /* Center the container horizontally and vertically */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center child elements vertically */
+  text-align: center;
+  margin-bottom: 30px; /* Margin for spacing below the container */
 }
 
 h1 {
-  color: #333;
-  margin-bottom: 20px;
+  color: #e0e0e0; /* Standard text color */
+  margin-bottom: 25px;
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Coda', monospace; /* Matching cryptic font */
 }
 
+/* Inputs and Textarea with minimal neon effects */
 input,
-textarea,
-button {
+textarea {
   width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  margin-bottom: 15px; /* Space between elements */
+  padding: 12px;
+  border: 2px solid #333;
+  border-radius: 6px;
+  background: #2a2a2a;
+  color: #e0e0e0;
   font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
+input:focus,
+textarea:focus {
+  border: 2px solid #846eee; /* Subtle purple border on focus */
+}
+
+/* Buttons */
 button {
-  background-color: #007bff;
+  background: linear-gradient(135deg, #846eee, #6b4fd0);
   color: #fff;
-  border: none;
+  border: 2px solid #846eee;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-top: 15px; /* Added margin between buttons */
+  transition: 0.4s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(132, 110, 238, 0.2); /* Reduced neon glow */
 }
 
 button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #6b4fd0, #846eee);
+  box-shadow: 0 0 15px rgba(132, 110, 238, 0.4); /* Reduced hover neon effect */
 }
 
+#output-tag{
+  margin-top:20px;
+}
+
+/* Output Area */
 #output {
   word-wrap: break-word;
-  margin-top: 10px;
-  padding: 10px;
-
-  font-size: 16px;
+  margin-top: 20px;
+  padding: 15px;
+  background: #1a1a1a;
+  color: #ffffff;
+  border: 2px solid #333; /* Removed neon border */
+  border-radius: 6px;
+  font-size: 18px;
+  margin-bottom: 20px; /* Spacing below the output */
 }
 
+/* Feedback Message */
 #copyFeedback {
   margin-top: 10px;
   font-size: 14px;
-  color: green;
+  color: #74ff74; /* Retro neon green for copy feedback */
 }
 
+/* Footer with subtle effects */
 footer {
   text-align: center;
-  background-color: #333; /* Dark background color for footer */
-  color: #fff; /* Text color for footer */
+  background-color: #1a1a1a;
+  color: #fff;
   padding: 20px;
   width: 100%;
-  margin-top: auto; /* Push footer to the bottom */
+  margin-top: 30px; /* Spacing between container and footer */
+  border-top: 2px solid #333; /* Subtle border without neon */
 }
 
 footer p {
   font-size: 14px;
+  margin-bottom: 10px;
 }
 
 footer a {
-  color: #fff;
+  color: #846eee;
   text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: #007bff;
 }

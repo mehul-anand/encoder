@@ -1,47 +1,11 @@
-// Authentication function
-function login() {
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-
-  if (username.toLowerCase() === 'mainframe' && password.toLowerCase() === 'iota') {
-    document.getElementById('loginContainer').style.display = 'none';
-    document.getElementById('appContainer').style.display = 'block';
-  } else {
-    document.getElementById('loginError').innerText =
-      'Invalid username or password';
-  }
-}
-
-// Add event listener for Enter key on login inputs
-document
-  .getElementById('username')
-  .addEventListener('keypress', function (event) {
-    if (event.key === 'Enter') {
-      login();
-    }
-  });
-
-document
-  .getElementById('password')
-  .addEventListener('keypress', function (event) {
-    if (event.key === 'Enter') {
-      login();
-    }
-  });
-
 // Function to encode a message using a Caesar cipher
 function encodeMessage() {
   const message = document.getElementById('inputMessage').value;
   let shift = parseInt(document.getElementById('shift').value);
   
   // Normalize shift to be within the range of 0 to 25
-  if(shift % 26 == 0){
-    shift++;
-    shift = ((shift % 26) + 26) % 26;
-  }else{
-    shift = ((shift % 26) + 26) % 26;
-  }
-  
+  shift = ((shift % 26) + 26) % 26;
+
   const encodedMessage = caesarCipher(message, shift);
   document.getElementById('output').innerText = encodedMessage;
   document.getElementById('copyFeedback').innerText = ''; // Clear copy feedback
@@ -53,13 +17,7 @@ function decodeMessage() {
   let shift = parseInt(document.getElementById('shift').value);
   
   // Normalize shift to be within the range of 0 to 25
-  if(shift % 26 == 0){
-    shift++;
-    shift = ((shift % 26) + 26) % 26;
-
-  }else{
-    shift = ((shift % 26) + 26) % 26;
-  }
+  shift = ((shift % 26) + 26) % 26;
   
   // To decode, use negative shift
   const decodedMessage = caesarCipher(message, -shift);
